@@ -1,0 +1,201 @@
+/* ffff.css */
+
+/* Variables CSS pour les couleurs et les ombres */
+:root {
+    --primary-bg-color: #572222;
+    --secondary-bg-color: #ddcccc;
+    --header-bg-image: url('background-image: repeating-linear-gradient(45deg, rgba(226, 226, 226,0.06) 0px, rgba(226, 226, 226,0.06) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));');
+    --section-bg-image: url('https://example.com/path/to/your/section-background.jpg');
+    --alternate-section-bg-image: url('https://example.com/path/to/your/alternate-section-background.jpg');
+    --form-bg-image: url('https://example.com/path/to/your/form-background.jpg');
+    --text-color-light: #ffffff;
+    --text-color-dark: #803a3a;
+    --text-color-muted: #fcf5f5;
+    --link-hover-color: #df7c7c96;
+    --button-bg-color: #333;
+    --button-hover-bg-color: #555;
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: rgba(0, 0, 0, 0.2);
+    --text-shadow: 1px 1px 2px rgba(39, 29, 29, 0.5); /* Ombre de texte pour améliorer la lisibilité */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--primary-bg-color), var(--secondary-bg-color));
+}
+
+header {
+    background: var(--header-bg-image) no-repeat center center/cover;
+    color: var(--text-color-light);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--box-shadow-dark);
+    backdrop-filter: blur(5px); /* Effet de flou pour améliorer la lisibilité du texte */
+    text-shadow: var(--text-shadow); /* Ombre de texte pour une meilleure visibilité */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centrer les éléments du menu */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    text-shadow: var(--text-shadow); /* Ombre de texte pour une meilleure visibilité */
+}
+
+nav ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+section {
+    padding: 40px 20px;
+    background: var(--section-bg-image) no-repeat center center/cover;
+    backdrop-filter: blur(8px); /* Effet de flou sur les images de fond */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+    margin: 20px auto;
+    max-width: 1200px;
+    color: var(--text-color-light);
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Fond sombre semi-transparent pour améliorer la lisibilité du texte */
+    z-index: 1;
+}
+
+section > * {
+    position: relative;
+    z-index: 2;
+}
+
+section:nth-of-type(even) {
+    background: var(--alternate-section-bg-image) no-repeat center center/cover;
+}
+
+.book {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px var(--box-shadow-light);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+.book img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px 8px 0 0;
+}
+
+.book h3 {
+    margin: 15px 0;
+    font-size: 1.3em;
+    color: var(--text-color-dark); /* Couleur de texte pour les titres de livre */
+}
+
+.book p {
+    color: var(--text-color-muted);
+    margin: 10px 0;
+}
+
+.book a {
+    display: inline-block;
+    background-color: var(--button-bg-color);
+    color: var(--text-color-light);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book a:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
+}
+
+form {
+    background: var(--form-bg-image) no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+    margin: 20px auto;
+    max-width: 600px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+form::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Fond sombre semi-transparent pour améliorer la lisibilité du texte */
+    z-index: 1;
+}
+
+form > * {
+    position: relative;
+    z-index: 2;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.1em;
+    color: var(--text-color-light);
+}
+
+form input, form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: var(--button-bg-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--button-hover-bg-color);
+    transform: scale(1.05);
+}
